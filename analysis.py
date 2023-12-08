@@ -174,7 +174,7 @@ blocks[blocks["GEOID20"] == "060730001001000"]
 
 # Get all segments of workforce data, loop through each one filter for SD county, then create one big data frame, join the data with census blocks -> check if centroids exist
 # in employment center of Downtown
-directory = 'data'
+directory = 'data/wac_data'
 import os
 
 
