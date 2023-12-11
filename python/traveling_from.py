@@ -24,7 +24,7 @@ dt_geocodes = dt_data['w_geocode'].unique()
 
 
 # Get all origin-destination data for California
-main_data = pd.read_csv('data/ca_od_main_JT00_2021.csv.gz', dtype={'w_geocode': 'str', 'h_geocode': 'int'}, compression='gzip')
+main_data = pd.read_csv('../data/ca_od_main_JT00_2021.csv.gz', dtype={'w_geocode': 'str', 'h_geocode': 'int'}, compression='gzip')
 main_data
 
 
@@ -45,7 +45,7 @@ downtown_od['h_geocode'] = '0' + downtown_od['h_geocode'].astype('str')
 # In[6]:
 
 
-census_blocks = gpd.read_file('data/Census_Blocks_2020_20231117.csv', dtype={'GEOID20': 'str'}).drop(columns=['geometry'])
+census_blocks = gpd.read_file('../data/Census_Blocks_2020_20231117.csv', dtype={'GEOID20': 'str'}).drop(columns=['geometry'])
 census_blocks['the_geom'] = census_blocks['the_geom'].apply(loads)
 census_blocks = census_blocks.set_geometry('the_geom')
 
@@ -89,7 +89,7 @@ merged_data
 # In[12]:
 
 
-outlines = gpd.read_file('data/Jurisdictions.csv').drop(columns=['geometry'])
+outlines = gpd.read_file('../data/Jurisdictions.csv').drop(columns=['geometry'])
 outlines['the_geom'] = outlines['the_geom'].apply(loads)
 outlines = outlines.set_geometry('the_geom')
 

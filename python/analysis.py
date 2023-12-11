@@ -17,7 +17,7 @@ from shapely.geometry import Point, MultiPolygon
 # In[65]:
 
 
-outlines = gpd.read_file('data/employment_center_outlines.csv').drop(columns=['geometry'])
+outlines = gpd.read_file('../data/employment_center_outlines.csv').drop(columns=['geometry'])
 outlines['the_geom'] = outlines['the_geom'].apply(loads)
 outlines = outlines.set_geometry('the_geom')
 
@@ -25,7 +25,7 @@ outlines = outlines.set_geometry('the_geom')
 # In[66]:
 
 
-tracts = gpd.read_file('data/tracts.csv').drop(columns=['geometry'])
+tracts = gpd.read_file('../data/tracts.csv').drop(columns=['geometry'])
 tracts['the_geom'] = tracts['the_geom'].apply(loads)
 tracts = tracts.set_geometry('the_geom')
 
@@ -33,7 +33,7 @@ tracts = tracts.set_geometry('the_geom')
 # In[67]:
 
 
-income = gpd.read_file('data/income_estimates.csv').drop(columns=['geometry'])
+income = gpd.read_file('../data/income_estimates.csv').drop(columns=['geometry'])
 
 
 # # Merge Tracts and Outlines on Centroids
@@ -91,7 +91,7 @@ income[income['tract']=='201.05']
 # In[74]:
 
 
-df = pd.read_csv("data/ca_wac_S000_JT00_2021.csv.gz", compression='gzip', dtype={'w_geocode': 'str'})
+df = pd.read_csv("../data/ca_wac_S000_JT00_2021.csv.gz", compression='gzip', dtype={'w_geocode': 'str'})
 df
 
 
@@ -122,7 +122,7 @@ sd_county[sd_county['w_geocode'].str[-4:] == '1000']
 # In[79]:
 
 
-blocks = pd.read_csv("data/Census_Blocks_2020_20231117.csv", dtype={'GEOID20': 'str'})
+blocks = pd.read_csv("../data/Census_Blocks_2020_20231117.csv", dtype={'GEOID20': 'str'})
 blocks.head()
 
 
@@ -174,7 +174,7 @@ blocks[blocks["GEOID20"] == "060730001001000"]
 
 # Get all segments of workforce data, loop through each one filter for SD county, then create one big data frame, join the data with census blocks -> check if centroids exist
 # in employment center of Downtown
-directory = 'data/wac_data'
+directory = '../data/wac_data'
 import os
 
 
@@ -250,7 +250,7 @@ merged_data
 # In[98]:
 
 
-outlines = gpd.read_file('data/employment_center_outlines.csv').drop(columns=['geometry'])
+outlines = gpd.read_file('../data/employment_center_outlines.csv').drop(columns=['geometry'])
 outlines['the_geom'] = outlines['the_geom'].apply(loads)
 outlines = outlines.set_geometry('the_geom')
 

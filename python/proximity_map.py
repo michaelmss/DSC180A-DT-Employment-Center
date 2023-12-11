@@ -13,7 +13,7 @@ from shapely.geometry import MultiPolygon
 # In[72]:
 
 
-lehd_od = pd.read_csv('data/ca_od_main_JT00_2021.csv.gz', compression='gzip')
+lehd_od = pd.read_csv('../data/ca_od_main_JT00_2021.csv.gz', compression='gzip')
 
 
 # In[73]:
@@ -57,10 +57,10 @@ only_downtown.groupby('h_geocode').count()
 # In[20]:
 
 
-# outlines = gpd.read_file('data/employment_center_outlines.csv').drop(columns=['geometry'])
+# outlines = gpd.read_file('../data/employment_center_outlines.csv').drop(columns=['geometry'])
 # outlines['the_geom'] = outlines['the_geom'].apply(loads)
 # outlines = outlines.set_geometry('the_geom')
-# tracts = gpd.read_file('data/tracts.csv').drop(columns=['geometry'])
+# tracts = gpd.read_file('../data/tracts.csv').drop(columns=['geometry'])
 # tracts['the_geom'] = tracts['the_geom'].apply(loads)
 # tracts = tracts.set_geometry('the_geom')
 # def get_centroid(df):
@@ -77,7 +77,7 @@ only_downtown.groupby('h_geocode').count()
 # In[133]:
 
 
-blocks = gpd.read_file('data/Census_Blocks_20231127.csv').drop(columns=['geometry'])
+blocks = gpd.read_file('../data/Census_Blocks_20231127.csv').drop(columns=['geometry'])
 blocks['the_geom'] = blocks['the_geom'].apply(loads)
 blocks = blocks.set_geometry('the_geom')
 only_downtown['tract_block']=only_downtown['h_tract']+only_downtown['h_block']
@@ -91,7 +91,7 @@ final.to_csv('./output/dt_location_count_by_block.csv')
 # In[140]:
 
 
-tracts = gpd.read_file('data/tracts.csv').drop(columns=['geometry'])
+tracts = gpd.read_file('../data/tracts.csv').drop(columns=['geometry'])
 tracts['the_geom'] = tracts['the_geom'].apply(loads)
 tracts = tracts.set_geometry('the_geom')
 tracts['CT'] = tracts['CT'].str.zfill(6)

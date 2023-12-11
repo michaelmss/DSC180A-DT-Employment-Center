@@ -17,7 +17,7 @@ from shapely.geometry import Point, MultiPolygon
 # In[96]:
 
 
-outlines = gpd.read_file('data/employment_center_outlines.csv').drop(columns=['geometry'])
+outlines = gpd.read_file('../data/employment_center_outlines.csv').drop(columns=['geometry'])
 outlines['the_geom'] = outlines['the_geom'].apply(loads)
 outlines = outlines.set_geometry('the_geom')
 
@@ -25,7 +25,7 @@ outlines = outlines.set_geometry('the_geom')
 # In[97]:
 
 
-tracts = gpd.read_file('data/tracts.csv').drop(columns=['geometry'])
+tracts = gpd.read_file('../data/tracts.csv').drop(columns=['geometry'])
 tracts['the_geom'] = tracts['the_geom'].apply(loads)
 tracts = tracts.set_geometry('the_geom')
 
@@ -33,7 +33,7 @@ tracts = tracts.set_geometry('the_geom')
 # In[98]:
 
 
-income = gpd.read_file('data/income_estimates.csv').drop(columns=['geometry'])
+income = gpd.read_file('../data/income_estimates.csv').drop(columns=['geometry'])
 
 
 # # Merge Tracts and Outlines on Centroids
@@ -165,7 +165,7 @@ median_income_dt
 # In[111]:
 
 
-incomes_region = pd.read_csv('data/2022_Estimates_Household_Income_by_2020_Census_Tract.csv')
+incomes_region = pd.read_csv('../data/2022_Estimates_Household_Income_by_2020_Census_Tract.csv')
 
 
 # In[112]:
@@ -263,7 +263,7 @@ import numpy as np
 # In[121]:
 
 
-ages_region = pd.read_csv('data/2022_Estimates_Population_by_Age_by_2020_Census_Tract.csv')
+ages_region = pd.read_csv('../data/2022_Estimates_Population_by_Age_by_2020_Census_Tract.csv')
 
 
 # # Median Age DT Employment Center

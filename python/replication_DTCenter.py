@@ -10,13 +10,13 @@ import pandas as pd
 # In[3]:
 
 
-downtown = pd.read_csv('data/dt_data.csv')
+downtown = pd.read_csv('../data/dt_data.csv')
 
 
 # In[6]:
 
 
-region = pd.read_csv('data/region_data.csv')
+region = pd.read_csv('../data/region_data.csv')
 
 
 # Table 1
