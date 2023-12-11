@@ -10,7 +10,7 @@ import pandas as pd
 # In[3]:
 
 
-downtown = pd.read_csv('../data/dt_data.csv')
+downtown = pd.read_csv('../output/dt_data.csv')
 
 
 # In[6]:

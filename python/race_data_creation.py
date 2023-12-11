@@ -10,7 +10,7 @@ import pandas as pd
 # In[31]:
 
 
-df = pd.read_csv("dt_data.csv")
+df = pd.read_csv("../output/dt_data.csv")
 
 
 # In[32]:
@@ -66,7 +66,7 @@ out = pd.merge(region_race, dt_race, left_index=True, right_index=True)#.to_csv(
 # In[51]:
 
 
-out.to_csv("race_all.csv")
+out.to_csv("../output/race_all.csv")
 
 
 # In[64]:
@@ -90,7 +90,7 @@ out["Location"] = region
 # In[73]:
 
 
-out.to_csv("race_all.csv")
+out.to_csv("../output/race_all.csv")
 
 
 # In[ ]:

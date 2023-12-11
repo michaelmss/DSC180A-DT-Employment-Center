@@ -16,7 +16,7 @@ pd.options.display.float_format = '{:.0f}'.format
 
 
 # Read in downtown data and get geocodes
-dt_data = pd.read_csv('dt_data.csv', dtype={'w_geocode': 'str'})
+dt_data = pd.read_csv('../output/dt_data.csv', dtype={'w_geocode': 'str'})
 dt_geocodes = dt_data['w_geocode'].unique()
 
 
