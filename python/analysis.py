@@ -25,7 +25,7 @@ outlines = outlines.set_geometry('the_geom')
 # In[66]:
 
 
-tracts = gpd.read_file('../data/tracts.csv').drop(columns=['geometry'])
+tracts = gpd.read_file('../data/large_data/tracts.csv').drop(columns=['geometry'])
 tracts['the_geom'] = tracts['the_geom'].apply(loads)
 tracts = tracts.set_geometry('the_geom')
 
@@ -91,7 +91,7 @@ income[income['tract']=='201.05']
 # In[74]:
 
 
-df = pd.read_csv("../data/wac_data/ca_wac_S000_JT00_2021.csv.gz", compression='gzip', dtype={'w_geocode': 'str'})
+df = pd.read_csv("../data/large_data/wac_data/ca_wac_S000_JT00_2021.csv.gz", compression='gzip', dtype={'w_geocode': 'str'})
 df
 
 
@@ -122,7 +122,7 @@ sd_county[sd_county['w_geocode'].str[-4:] == '1000']
 # In[79]:
 
 
-blocks = pd.read_csv("../data/Census_Blocks_2020_20231117.csv", dtype={'GEOID20': 'str'})
+blocks = pd.read_csv("../data/large_data/Census_Blocks_20231127.csv", dtype={'GEOID20': 'str'})
 blocks.head()
 
 
@@ -174,7 +174,7 @@ blocks[blocks["GEOID20"] == "060730001001000"]
 
 # Get all segments of workforce data, loop through each one filter for SD county, then create one big data frame, join the data with census blocks -> check if centroids exist
 # in employment center of Downtown
-directory = '../data/wac_data'
+directory = '../data/large_data/wac_data'
 import os
 
 

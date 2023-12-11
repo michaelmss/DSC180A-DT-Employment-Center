@@ -45,7 +45,7 @@ downtown_od['h_geocode'] = '0' + downtown_od['h_geocode'].astype('str')
 # In[6]:
 
 
-census_blocks = gpd.read_file('../data/Census_Blocks_2020_20231117.csv', dtype={'GEOID20': 'str'}).drop(columns=['geometry'])
+census_blocks = gpd.read_file('../data/Census_Blocks_20231127.csv', dtype={'GEOID20': 'str'}).drop(columns=['geometry'])
 census_blocks['the_geom'] = census_blocks['the_geom'].apply(loads)
 census_blocks = census_blocks.set_geometry('the_geom')
 
