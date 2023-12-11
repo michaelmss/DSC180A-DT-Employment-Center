@@ -169,7 +169,7 @@ map_jurisdiction = od_final.merge(outlines, left_on='Employment Center', right_o
 # In[31]:
 
 
-map_jurisdiction.to_csv('output/map_jurisdiction.csv')
+map_jurisdiction.to_csv('../output/map_jurisdiction.csv')
 
 
 # In[112]:

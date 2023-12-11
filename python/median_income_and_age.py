@@ -382,7 +382,7 @@ final_df = pd.DataFrame(data=median_values,index = [0])
 # In[138]:
 
 
-# final_df.to_csv('output/ages_and_income.csv')
+# final_df.to_csv('../output/ages_and_income.csv')
 
 
 # In[139]:

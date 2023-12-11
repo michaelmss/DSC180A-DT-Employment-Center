@@ -91,7 +91,7 @@ income[income['tract']=='201.05']
 # In[74]:
 
 
-df = pd.read_csv("../data/ca_wac_S000_JT00_2021.csv.gz", compression='gzip', dtype={'w_geocode': 'str'})
+df = pd.read_csv("../data/wac_data/ca_wac_S000_JT00_2021.csv.gz", compression='gzip', dtype={'w_geocode': 'str'})
 df
 
 
@@ -268,7 +268,7 @@ dt_point
 
 outlines_and_tracts = dt_point.sjoin_nearest(merged_data, how='left', distance_col='centroid')
 
-outlines_and_tracts.to_csv('output/dt_data.csv', index=False)
+outlines_and_tracts.to_csv('../output/dt_data.csv', index=False)
 
 
 # In[101]:

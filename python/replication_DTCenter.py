@@ -143,7 +143,7 @@ dt_df.head(10)
 # In[17]:
 
 
-dt_df.to_csv('output/DowntownJobDistribution.csv')
+dt_df.to_csv('../output/DowntownJobDistribution.csv')
 
 
 # ## Figure 1

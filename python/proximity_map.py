@@ -85,7 +85,7 @@ blocks['tract_block'] = blocks['TRACTCE20']+blocks['BLOCKCE20']
 g_only_downtown = gpd.GeoDataFrame(only_downtown)
 merge = blocks.merge(g_only_downtown,how='inner',on='tract_block')
 final = merge.groupby('the_geom').count()[['OBJECTID']].rename(columns={'OBJECTID':'count'})
-final.to_csv('./output/dt_location_count_by_block.csv')
+final.to_csv('./../output/dt_location_count_by_block.csv')
 
 
 # In[140]:
@@ -107,7 +107,7 @@ final_tracts = tracts.merge(g_only_downtown, left_on='CT', right_on='h_tract', h
 # In[149]:
 
 
-final_tracts.to_csv('output/dt_location_count_by_tract.csv')
+final_tracts.to_csv('../output/dt_location_count_by_tract.csv')
 
 
 # In[ ]:
