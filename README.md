@@ -23,6 +23,9 @@ conda env create --name envname --file=environments.yml
 The following data needs to be downloaded and added to the data/large_data folder before running run.py:
 
 tracts.csv - https://opendata.sandag.org/dataset/Census-Tracts/g3xq-yubj/about_data
+
 ca\*wac_S000_JT00_2021.csv.gz - https://lehd.ces.census.gov/data/
+
 Census_Blocks_20231127.csv - https://opendata.sandag.org/dataset/Census-Blocks/majq-4nyy
+
 ca_wac....csv.gz - https://lehd.ces.census.gov/data/
