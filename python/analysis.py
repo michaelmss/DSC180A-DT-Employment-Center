@@ -73,14 +73,6 @@ merge_income= merged_not_equal[merged_not_equal['households_right']==merged_not_
 # In[71]:
 
 
-spatial_income = outlines_and_tracts.merge(merge_income, left_on='CT2010DT', right_on='tract',how='left')
-
-
-# In[72]:
-
-
-# #EPSG 2230 _> centroid to centroid 
-# spatial_income.explore()
 
 
 # In[73]:
