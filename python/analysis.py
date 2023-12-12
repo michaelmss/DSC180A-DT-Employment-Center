@@ -5,7 +5,8 @@
 
 # In[64]:
 
-
+import warnings
+warnings.filterwarnings("ignore")
 import geopandas as gpd
 from shapely.wkt import loads
 import pandas as pd
@@ -33,7 +34,7 @@ tracts = tracts.set_geometry('the_geom')
 # In[67]:
 
 
-income = gpd.read_file('../data/income_estimates.csv').drop(columns=['geometry'])
+income = gpd.read_file('../data/2022_Estimates_Household_Income_by_2020_Census_Tract.csv').drop(columns=['geometry'])
 
 
 # # Merge Tracts and Outlines on Centroids
@@ -78,21 +79,21 @@ spatial_income = outlines_and_tracts.merge(merge_income, left_on='CT2010DT', rig
 # In[72]:
 
 
-#EPSG 2230 _> centroid to centroid 
-spatial_income.explore()
+# #EPSG 2230 _> centroid to centroid 
+# spatial_income.explore()
 
 
 # In[73]:
 
 
-income[income['tract']=='201.05']
+# income[income['tract']=='201.05']
 
 
 # In[74]:
 
 
 df = pd.read_csv("../data/large_data/wac_data/ca_wac_S000_JT00_2021.csv.gz", compression='gzip', dtype={'w_geocode': 'str'})
-df
+# df
 
 
 # In[75]:
@@ -123,19 +124,19 @@ sd_county[sd_county['w_geocode'].str[-4:] == '1000']
 
 
 blocks = pd.read_csv("../data/large_data/Census_Blocks_20231127.csv", dtype={'GEOID20': 'str'})
-blocks.head()
+# blocks.head()
 
 
 # In[80]:
 
 
-blocks[blocks['BLOCK'] == 1000]
+# blocks[blocks['BLOCKCE20'] == 1000]
 
 
 # In[81]:
 
 
-blocks.join(sd_county, lsuffix='GEOID20', rsuffix='w_geocode').info()
+blocks.join(sd_county, lsuffix='GEOID20', rsuffix='w_geocode')
 
 
 # In[82]:
@@ -148,25 +149,25 @@ sd_county.join(blocks, lsuffix='w_geocode', rsuffix='GEOID20')
 
 
 # Smaller blocks (find centroid), spatial join on employment center
-blocks.head()
+# blocks.head()
 
 
 # In[84]:
 
 
-blocks['GEOID20'].str.len()
+# blocks['GEOID20'].str.len()
 
 
 # In[85]:
 
 
-sd_county['w_geocode'].str.len()
+# sd_county['w_geocode'].str.len()
 
 
 # In[86]:
 
 
-blocks[blocks["GEOID20"] == "060730001001000"]
+# blocks[blocks["GEOID20"] == "060730001001000"]
 
 
 # In[87]:
@@ -181,7 +182,7 @@ import os
 # In[88]:
 
 
-os.listdir(directory)
+# os.listdir(directory)
 
 
 # In[89]:
@@ -194,14 +195,14 @@ for file in os.listdir(directory):
         df = pd.read_csv(os.path.join(directory, file), compression='gzip', dtype={'w_geocode': 'str'})
         complete_df = pd.concat([complete_df, df], ignore_index=True)
 
-complete_df
+
 
 
 # In[90]:
 
 
 san_diego = complete_df[complete_df['w_geocode'].str[:5] == '06073']
-san_diego
+
 
 
 # In[91]:
@@ -213,13 +214,13 @@ merged_data = san_diego.merge(blocks, left_on="w_geocode", right_on="GEOID20")
 # In[92]:
 
 
-merged_data.columns
+# merged_data.columns
 
 
 # In[93]:
 
 
-merged_data.groupby("w_geocode").sum()
+# merged_data.groupby("w_geocode").sum()
 
 
 # In[94]:
@@ -244,7 +245,7 @@ merged_data['centroid'] = merged_data.apply(get_centroid, axis=1)
 # In[97]:
 
 
-merged_data
+# merged_data
 
 
 # In[98]:
@@ -260,7 +261,7 @@ outlines = outlines.set_geometry('the_geom')
 
 outlines["centroid"] = outlines[outlines['Name'] == 'Downtown'].apply(get_centroid, axis=1)
 dt_point = outlines[outlines["Name"] == "Downtown"]
-dt_point
+# dt_point
 
 
 # In[100]:
@@ -269,6 +270,28 @@ dt_point
 outlines_and_tracts = dt_point.sjoin_nearest(merged_data, how='left', distance_col='centroid')
 
 outlines_and_tracts.to_csv('../output/dt_data.csv', index=False)
+# In[98]:
+
+
+outlines = gpd.read_file('../data/employment_center_outlines.csv').drop(columns=['geometry'])
+outlines['the_geom'] = outlines['the_geom'].apply(loads)
+outlines = outlines.set_geometry('the_geom')
+
+
+# In[99]:
+
+
+outlines["centroid"] = outlines[outlines['Name'] != 'Downtown'].apply(get_centroid, axis=1)
+dt_point = outlines[outlines["Name"] != "Downtown"]
+# dt_point
+
+
+# In[100]:
+
+
+outlines_and_tracts = dt_point.sjoin_nearest(merged_data, how='left', distance_col='centroid')
+
+outlines_and_tracts.to_csv('../output/region_data.csv', index=False)
 
 
 # In[101]:

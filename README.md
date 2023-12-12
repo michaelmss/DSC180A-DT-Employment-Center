@@ -14,6 +14,7 @@ Before running run.py, ensure that your environment is correct and the necessary
 
 ### Conda Environment
 
+0
 Generate the needed conda environment by running the following command:
 
 ```
@@ -21,6 +22,23 @@ conda env create --name envname --file=environments.yml
 ```
 
 ### Required Data Sources
+
+Larger data sets need to be downloaded to the large_data folder
+
+Census Blocks - https://opendata.sandag.org/resource/bevn-aqff.csv
+Census Tracts - https://opendata.sandag.org/resource/g3xq-yubj.csv
+Census OD Data - https://lehd.ces.census.gov/data/lodes/LODES8/ca/od/ca_od_main_JT00_2021.csv.gz
+Census WAC data -
+https://lehd.ces.census.gov/data/lodes/LODES8/ca/wac/ca_wac_S000_JT00_2021.csv.gz
+https://lehd.ces.census.gov/data/lodes/LODES8/ca/wac/ca_wac_SA01_JT00_2021.csv.gz
+https://lehd.ces.census.gov/data/lodes/LODES8/ca/wac/ca_wac_SA02_JT00_2021.csv.gz
+https://lehd.ces.census.gov/data/lodes/LODES8/ca/wac/ca_wac_SA03_JT00_2021.csv.gz
+https://lehd.ces.census.gov/data/lodes/LODES8/ca/wac/ca_wac_SE01_JT00_2021.csv.gz
+https://lehd.ces.census.gov/data/lodes/LODES8/ca/wac/ca_wac_SE02_JT00_2021.csv.gz
+https://lehd.ces.census.gov/data/lodes/LODES8/ca/wac/ca_wac_SE03_JT00_2021.csv.gz
+https://lehd.ces.census.gov/data/lodes/LODES8/ca/wac/ca_wac_SI01_JT00_2021.csv.gz
+https://lehd.ces.census.gov/data/lodes/LODES8/ca/wac/ca_wac_SI02_JT00_2021.csv.gz
+https://lehd.ces.census.gov/data/lodes/LODES8/ca/wac/ca_wac_SI03_JT00_2021.csv.gz
 
 The following data needs to be downloaded and added to the data/large_data folder before running run.py:
 

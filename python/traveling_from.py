@@ -4,6 +4,8 @@
 # In[1]:
 
 
+import warnings
+warnings.filterwarnings("ignore")
 import geopandas as gpd
 from shapely.wkt import loads
 import pandas as pd
@@ -24,7 +26,7 @@ dt_geocodes = dt_data['w_geocode'].unique()
 
 
 # Get all origin-destination data for California
-main_data = pd.read_csv('../data/ca_od_main_JT00_2021.csv.gz', dtype={'w_geocode': 'str', 'h_geocode': 'int'}, compression='gzip')
+main_data = pd.read_csv('../data/large_data/ca_od_main_JT00_2021.csv.gz', dtype={'w_geocode': 'str', 'h_geocode': 'int'}, compression='gzip')
 main_data
 
 
@@ -70,13 +72,13 @@ def get_centroid(df):
 # In[9]:
 
 
-merged_data.info()
+# merged_data.info()
 
 
 # In[10]:
 
 
-merged_data.head()
+# merged_data.head()
 
 
 # In[11]:
@@ -97,7 +99,7 @@ outlines = outlines.set_geometry('the_geom')
 # In[13]:
 
 
-outlines.info()
+# outlines.info()
 
 
 # In[14]:

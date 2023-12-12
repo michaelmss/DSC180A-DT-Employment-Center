@@ -4,6 +4,8 @@
 # In[30]:
 
 
+import warnings
+warnings.filterwarnings("ignore")
 import pandas as pd
 
 
@@ -17,7 +19,7 @@ df = pd.read_csv("../output/dt_data.csv")
 
 
 df = df.rename(columns={'CR01': 'White', 'CR02': 'Black', "CR03": "Native American", "CR04": "Asian", "CR05": "Hawaiian" , "CR07": "Two or more", "CT02": "Hispanic"})
-df.head()
+# df.head()
 
 
 # In[33]:
@@ -41,7 +43,7 @@ df
 # In[35]:
 
 
-df2 = pd.read_csv("region_data.csv")
+df2 = pd.read_csv("../output/region_data.csv")
 
 
 # In[37]:

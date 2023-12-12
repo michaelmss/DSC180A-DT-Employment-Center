@@ -6,6 +6,8 @@
 # In[95]:
 
 
+import warnings
+warnings.filterwarnings("ignore")
 import geopandas as gpd
 from shapely.wkt import loads
 import pandas as pd
@@ -25,7 +27,7 @@ outlines = outlines.set_geometry('the_geom')
 # In[97]:
 
 
-tracts = gpd.read_file('../data/tracts.csv').drop(columns=['geometry'])
+tracts = gpd.read_file('../data/large_data/tracts.csv').drop(columns=['geometry'])
 tracts['the_geom'] = tracts['the_geom'].apply(loads)
 tracts = tracts.set_geometry('the_geom')
 
@@ -33,7 +35,7 @@ tracts = tracts.set_geometry('the_geom')
 # In[98]:
 
 
-income = gpd.read_file('../data/income_estimates.csv').drop(columns=['geometry'])
+income = gpd.read_file('../data/2022_Estimates_Household_Income_by_2020_Census_Tract.csv').drop(columns=['geometry'])
 
 
 # # Merge Tracts and Outlines on Centroids
@@ -278,7 +280,7 @@ ages_dt_2022 = ages_dt[ages_dt['yr_id'] == 2022]
 # In[123]:
 
 
-ages_dt_2022.head()
+# ages_dt_2022.head()
 
 
 # In[124]:
@@ -286,7 +288,7 @@ ages_dt_2022.head()
 
 # Apply the revised function to the 'name' column to create 'weighted age'
 ages_dt_2022['weighted age'] = ages_dt_2022['name'].apply(calculate_median_age)
-ages_dt_2022.head()
+# ages_dt_2022.head()
 
 
 # In[125]:
@@ -334,7 +336,7 @@ ages_region_2022 = ages_region_2022.groupby('weighted age').sum().reset_index()
 # In[129]:
 
 
-ages_region_2022.head()
+# ages_region_2022.head()
 
 
 # In[130]:

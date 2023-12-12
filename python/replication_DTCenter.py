@@ -4,6 +4,8 @@
 # In[1]:
 
 
+import warnings
+warnings.filterwarnings("ignore")
 import pandas as pd
 
 
@@ -16,7 +18,7 @@ downtown = pd.read_csv('../output/dt_data.csv')
 # In[6]:
 
 
-region = pd.read_csv('../data/region_data.csv')
+region = pd.read_csv('../output/region_data.csv')
 
 
 # Table 1
@@ -58,7 +60,7 @@ for column_name in [f'CNS{i:02d}' for i in range(1, 21)]:
 
 # Now, column_sums is a dictionary where keys are column names like "CNS01", "CNS02", ..., "CNS20",
 # and values are the sums of the respective columns
-print(dt_sums)
+# print(dt_sums)
 
 
 # In[10]:
@@ -91,7 +93,7 @@ for column_name in [f'CNS{i:02d}' for i in range(1, 21)]:
 
 # Now, column_sums is a dictionary where keys are column names like "CNS01", "CNS02", ..., "CNS20",
 # and values are the sums of the respective columns
-print(regional_sums)
+# print(regional_sums)
 
 
 # In[13]:
@@ -137,7 +139,7 @@ dt_df['% of jobs'] = dt_df['% of jobs'].apply(lambda x: f'{x:.2f}%')
 # In[16]:
 
 
-dt_df.head(10)
+# dt_df.head(10)
 
 
 # In[17]:

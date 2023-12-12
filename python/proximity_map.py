@@ -4,6 +4,8 @@
 # In[2]:
 
 
+import warnings
+warnings.filterwarnings("ignore")
 import geopandas as gpd
 from shapely.wkt import loads
 import pandas as pd
@@ -52,26 +54,6 @@ only_downtown.groupby('h_geocode').count()
 
 
 
-
-
-# In[20]:
-
-
-# outlines = gpd.read_file('../data/employment_center_outlines.csv').drop(columns=['geometry'])
-# outlines['the_geom'] = outlines['the_geom'].apply(loads)
-# outlines = outlines.set_geometry('the_geom')
-# tracts = gpd.read_file('../data/tracts.csv').drop(columns=['geometry'])
-# tracts['the_geom'] = tracts['the_geom'].apply(loads)
-# tracts = tracts.set_geometry('the_geom')
-# def get_centroid(df):
-#     polygons = df['the_geom']
-#     if isinstance(polygons, MultiPolygon) or isinstance(polygons, Polygon):
-#         return polygons.centroid
-#     else:
-#         return None
-# outlines['centroid'] = outlines.apply(get_centroid, axis=1)
-# tracts['centroid'] = tracts.apply(get_centroid, axis=1)
-# outlines_and_tracts = outlines.sjoin_nearest(tracts, how='left', distance_col='centroid')
 
 
 # In[133]:
