@@ -2,10 +2,6 @@
 
 # Download the required data if it does not exist
 
-if conda env list | grep ".*dt_employment_center.*" >/dev/null 2>&1; then echo "Conda env already exists"; else conda env create --file=environment.yml -n dt_employment_center; fi
-
-conda activate dt_employment_center
-
 if ! test -d ./data; then
   echo "No data folder. Generating folder."
   mkdir ./data;
