@@ -36,14 +36,14 @@ download_small () {
     fi
 }
 
-download "tracts.csv" "https://opendata.sandag.org/resource/g3xq-yubj.csv"
+download "tracts.csv" "https://opendata.sandag.org/api/views/g3xq-yubj/rows.csv?date=20231211&accessType=DOWNLOAD"
 download "ca_od_main_JT00_2021.csv.gz" "https://lehd.ces.census.gov/data/lodes/LODES8/ca/od/ca_od_main_JT00_2021.csv.gz"
-download "Census_Blocks_20231127.csv" "https://opendata.sandag.org/resource/bevn-aqff.csv"
+download "Census_Blocks_20231127.csv" "https://opendata.sandag.org/api/views/bevn-aqff/rows.csv?date=20231211&accessType=DOWNLOAD"
 
-download_small "2022_Estimates_Household_Income_by_2020_Census_Tract.csv" "https://opendata.sandag.org/resource/x5fx-d7vu.csv"
-download_small "2022_Estimates_Population_by_Age_by_2020_Census_Tract.csv" "https://opendata.sandag.org/resource/p4vm-r7qt.csv"
-download_small "employment_center_outlines.csv" "https://opendata.sandag.org/resource/ixp5-dfuk.csv"
-download_small "Jurisdictions.csv" "https://opendata.sandag.org/resource/82fk-sjxb.csv"
+download_small "2022_Estimates_Household_Income_by_2020_Census_Tract.csv" "https://opendata.sandag.org/api/views/x5fx-d7vu/rows.csv?date=20231211&accessType=DOWNLOAD"
+download_small "2022_Estimates_Population_by_Age_by_2020_Census_Tract.csv" "https://opendata.sandag.org/api/views/p4vm-r7qt/rows.csv?date=20231211&accessType=DOWNLOAD"
+download_small "employment_center_outlines.csv" "https://opendata.sandag.org/api/views/ixp5-dfuk/rows.csv?date=20231211&accessType=DOWNLOAD"
+download_small "Jurisdictions.csv" "https://opendata.sandag.org/api/views/82fk-sjxb/rows.csv?date=20231211&accessType=DOWNLOAD"
 
 download_wac "ca_wac_S000_JT00_2021.csv.gz" "https://lehd.ces.census.gov/data/lodes/LODES8/ca/wac/ca_wac_S000_JT00_2021.csv.gz"
 download_wac "ca_wac_SA01_JT00_2021.csv.gz" "https://lehd.ces.census.gov/data/lodes/LODES8/ca/wac/ca_wac_SA01_JT00_2021.csv.gz"
