@@ -1,4 +1,4 @@
-name: geo_env
+name: dt_employment_center
 channels:
   - conda-forge
   - defaults
@@ -171,25 +171,25 @@ dependencies:
   - zlib=1.2.13=h8a1eda9_5
   - zstd=1.5.5=h829000d_0
   - pip:
-    - brotli==1.1.0
-    - contourpy==1.2.0
-    - debugpy==1.8.0
-    - fiona==1.9.5
-    - fonttools==4.44.1
-    - gdal==3.8.0
-    - jupyter-core==5.5.0
-    - kiwisolver==1.4.5
-    - markupsafe==2.1.3
-    - matplotlib==3.8.1
-    - numpy==1.26.0
-    - pandas==2.1.3
-    - pillow==10.1.0
-    - psutil==5.9.5
-    - pyproj==3.6.1
-    - pyzmq==25.1.1
-    - rtree==1.1.0
-    - scikit-learn==1.3.2
-    - scipy==1.11.3
-    - shapely==2.0.2
-    - tornado==6.3.3
+      - brotli==1.1.0
+      - contourpy==1.2.0
+      - debugpy==1.8.0
+      - fiona==1.9.5
+      - fonttools==4.44.1
+      - gdal==3.8.0
+      - jupyter-core==5.5.0
+      - kiwisolver==1.4.5
+      - markupsafe==2.1.3
+      - matplotlib==3.8.1
+      - numpy==1.26.0
+      - pandas==2.1.3
+      - pillow==10.1.0
+      - psutil==5.9.5
+      - pyproj==3.6.1
+      - pyzmq==25.1.1
+      - rtree==1.1.0
+      - scikit-learn==1.3.2
+      - scipy==1.11.3
+      - shapely==2.0.2
+      - tornado==6.3.3
 prefix: /Users/michaelsmith/opt/anaconda3/envs/geo_env
