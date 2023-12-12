@@ -17,3 +17,5 @@ Before running run.py, ensure that your environment is correct and the necessary
 This file will download the required data, activate the conda environment, and generate the exports to the output/ folder. Anaconda needs to be installed before running this script.
 
 Simply run `sh run.sh` on Mac, or `bash run.sh` on windows.
+
+This may take awhile to run, as it will download all required dependencies, data, and execute python code.
